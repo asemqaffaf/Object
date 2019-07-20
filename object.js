@@ -124,55 +124,55 @@ Ex: repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO"
   hello:3
 }
 */
-// function repeatWord(str) {
-//   str = str.toLowerCase();
-//   var arr = str.split(" ");
-//   arr.sort();
-//   var current = "";
-//   var counter = 0;
-//   var obj = {};
-//   for (var i = 0; i < arr.length; i++) {
-//     if (arr[i] != current) {
-//       if (counter > 0) {
-//         obj[current] = counter;
-//       }
-//       current = arr[i];
-//       counter = 1;
-//     } else {
-//       counter++;
-//     }
-//   }
-//   if (counter > 0) {
-//     obj[current] = counter;
-//   }
-//   return obj;
-// }
+function repeatWord(str) {
+  str = str.toLowerCase();
+  var arr = str.split(" ");
+  arr.sort();
+  var current = "";
+  var counter = 0;
+  var obj = {};
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] != current) {
+      if (counter > 0) {
+        obj[current] = counter;
+      }
+      current = arr[i];
+      counter = 1;
+    } else {
+      counter++;
+    }
+  }
+  if (counter > 0) {
+    obj[current] = counter;
+  }
+  return obj;
+}
 
-// console.log(
-//   repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO")
-// );
-// function repeatWord(str) {
-//   str = str.toLowerCase();
-//   var array = str.split(" ");
-//   var keys = [];
-//   var values = [];
-//   for (let i = 0; i < array.length; i++) {
-//     var counter = 0;
-//     keys[i] = array[i];
-//     for (let j = 0; j < array.length; j++) {
-//       if (array[i] == array[j]) {
-//         counter++;
-//       }
-//     }
-//     values[i] = counter;
-//   }
-//   var newObject = {};
-//   keys.forEach((key, i) => (newObject[key] = values[i]));
-//   return newObject;
-// }
-// console.log(
-//   repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO")
-// );
+console.log(
+  repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO")
+);
+function repeatWord(str) {
+  str = str.toLowerCase();
+  var array = str.split(" ");
+  var keys = [];
+  var values = [];
+  for (let i = 0; i < array.length; i++) {
+    var counter = 0;
+    keys[i] = array[i];
+    for (let j = 0; j < array.length; j++) {
+      if (array[i] == array[j]) {
+        counter++;
+      }
+    }
+    values[i] = counter;
+  }
+  var newObject = {};
+  keys.forEach((key, i) => (newObject[key] = values[i]));
+  return newObject;
+}
+console.log(
+  repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO")
+);
 /*
 8
 Create a function called repeatChar
