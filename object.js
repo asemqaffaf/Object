@@ -23,7 +23,14 @@ and return all the first name of the person insides
 
 Ex: firstName(persons) => ['John', 'Alex', 'Alice', 'Thor', 'Soso']
 */
-
+function firstName(obj) {
+  var arr = [];
+  for (let i = 0; i < obj.length; i++) {
+    arr.push(obj[i].name.first);
+  }
+  return arr;
+}
+// console.log(firstName(persons));
 /*
 3
 Using the varabile persons
@@ -33,7 +40,14 @@ and return the average age of those persons
 
 Ex: averageAge(persons) => 41.2
 */
-
+function averageAge(obj) {
+  var sum = 0;
+  for (let i = 0; i < obj.length; i++) {
+    sum += obj[i].age;
+  }
+  return sum / obj.length;
+}
+// console.log(averageAge(persons));
 /*
 4
 Using the varabile persons
@@ -43,7 +57,18 @@ and return the full name of the older person
 
 Ex: olderPerson(persons) => "Soso Al-Amora"
 */
-
+function olderPerson(obj) {
+  var ins = obj[0];
+  var str = "";
+  for (let i = 0; i < obj.length; i++) {
+    if (obj[i].age > ins.age) {
+      ins = obj[i];
+      str = ins.name.first + " " + ins.name.last;
+    }
+  }
+  return str;
+}
+// console.log(olderPerson(persons));
 /*
 5
 Using the varabile persons
@@ -53,7 +78,18 @@ and return the full name of the person have longest full name
 
 Ex: longestName(persons) => "Soso Al-Amora"
 */
-
+function longestName(obj) {
+  var ins = obj[0].name.first + " " + obj[0].name.last;
+  var str = "";
+  for (let i = 0; i < obj.length; i++) {
+    if ((obj[i].name.first + obj[i].name.last).length > ins.length) {
+      ins = obj[i].name.first + " " + obj[i].name.last;
+      str = ins;
+    }
+  }
+  return str;
+}
+console.log(longestName(persons));
 /*
 6
 Using the varabile persons
@@ -168,7 +204,7 @@ function selectFromObject(obj, arr) {
   }
   return newObj;
 }
-console.log(selectFromObject({ a: 1, cat: 3 }, ["a", "cat", "d"]));
+// console.log(selectFromObject({ a: 1, cat: 3 }, ["a", "cat", "d"]));
 /*
 10
 Create a function called objectToArray
@@ -221,9 +257,9 @@ function onlyNumber(obj) {
   }
   return newObj;
 }
-console.log(
-  onlyNumber({ firstName: "Moh", age: 24, movies: [1, 5, "string"] })
-);
+// console.log(
+//   onlyNumber({ firstName: "Moh", age: 24, movies: [1, 5, "string"] })
+// );
 /*
 13
 Create a function called onlyString
@@ -244,9 +280,9 @@ function onlyString(obj) {
   }
   return newObj;
 }
-console.log(
-  onlyString({ firstName: "Moh", age: 24, movies: [1, 5, "string"] })
-);
+// console.log(
+//   onlyString({ firstName: "Moh", age: 24, movies: [1, 5, "string"] })
+// );
 /*
 14
 Create a function called onlyArray
@@ -267,7 +303,7 @@ function onlyArray(obj) {
   }
   return newObj;
 }
-console.log(onlyArray({ firstName: "Moh", age: 24, movies: [1, 5, "string"] }));
+// console.log(onlyArray({ firstName: "Moh", age: 24, movies: [1, 5, "string"] }));
 /*
 15
 Create a function called keysArray
@@ -281,7 +317,7 @@ Ex: keysArray({firstName:"Moh",age:24,movies:[1,5,"string"]})
 function keysArray(obj) {
   return Object.keys(obj);
 }
-console.log(keysArray({ firstName: "Moh", age: 24, movies: [1, 5, "string"] }));
+// console.log(keysArray({ firstName: "Moh", age: 24, movies: [1, 5, "string"] }));
 /*
 16
 Create a function called valuesArray
@@ -295,9 +331,9 @@ Ex: keysArray({firstName:"Moh",age:24,movies:[1,5,"string"]})
 function valuesArray(obj) {
   return Object.values(obj);
 }
-console.log(
-  valuesArray({ firstName: "Moh", age: 24, movies: [1, 5, "string"] })
-);
+// console.log(
+//   valuesArray({ firstName: "Moh", age: 24, movies: [1, 5, "string"] })
+// );
 /*
 17
 make this object => {a:1,b:3,c:4}
@@ -308,7 +344,7 @@ var objective = { a: 1, b: 3, c: 4 };
 objective["a"] = 4;
 delete objective.b;
 objective["c"] = 66;
-console.log(objective);
+// console.log(objective);
 /*
 18
 Create a function called objectLength
@@ -321,7 +357,7 @@ Ex: keysArray({a:1,b:2,c:3,d:4})
 function objectLength(obj) {
   return Object.keys(obj).length;
 }
-console.log(objectLength({ a: 1, b: 2, c: 3, d: 4 }));
+// console.log(objectLength({ a: 1, b: 2, c: 3, d: 4 }));
 /*
 19
 Create a function called evenValue
@@ -341,7 +377,7 @@ function evenValue(obj) {
   }
   return newObj;
 }
-console.log(evenValue({ a: 1, b: 2, c: 3, d: 4 }));
+// console.log(evenValue({ a: 1, b: 2, c: 3, d: 4 }));
 /*
 20
 Create a function called longestKey
@@ -362,4 +398,4 @@ function longestKey(obj) {
   newObj[inst] = obj[inst];
   return newObj;
 }
-console.log(longestKey({ car: 1, school: 2, monster: 3, alexMercer: 4 }));
+// console.log(longestKey({ car: 1, school: 2, monster: 3, alexMercer: 4 }));
